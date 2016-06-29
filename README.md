@@ -1,6 +1,6 @@
 # MobX React MatchMedia
 
-##### MobX and MatchMedia with React HOC
+##### A React HOC with MobX and MatchMedia
 
 [![Travis Build](https://img.shields.io/travis/foxhound87/mobx-react-matchmedia.svg)](https://travis-ci.org/foxhound87/mobx-react-matchmedia)
 [![Codecov Coverage](https://img.shields.io/codecov/c/github/foxhound87/mobx-react-matchmedia/master.svg)](https://codecov.io/gh/foxhound87/mobx-react-matchmedia)
@@ -14,6 +14,12 @@
 [![NPM](https://nodei.co/npm/mobx-react-matchmedia.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/mobx-react-matchmedia/)
 
 ---
+
+## Install
+
+```bash
+npm i --save mobx-react-matchmedia
+```
 
 ## TODO:
 

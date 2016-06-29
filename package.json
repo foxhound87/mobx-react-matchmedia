@@ -3,7 +3,7 @@
   "license": "MIT",
   "version": "0.0.0-semantically-released",
   "author": "Claudio Savino <claudio.savino@me.com> (https://twitter.com/foxhound87)",
-  "description": "MobX and MatchMedia with React HOC",
+  "description": "A React HOC with MobX and MatchMedia",
   "homepage": "https://www.npmjs.com/package/mobx-react-matchmedia",
   "main": "lib/index.js",
   "scripts": {
