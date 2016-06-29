@@ -1,7 +1,6 @@
 {
   "name": "mobx-react-matchmedia",
   "license": "MIT",
-  "version": "0.0.0-semantically-released",
   "author": "Claudio Savino <claudio.savino@me.com> (https://twitter.com/foxhound87)",
   "description": "A React HOC with MobX and MatchMedia",
   "homepage": "https://www.npmjs.com/package/mobx-react-matchmedia",
@@ -24,7 +23,8 @@
     "cover": "nyc npm test",
     "coverage:check": "nyc check-coverage --satements 40 --branches 40 --functions 40 --lines 40",
     "coverage:report": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "release": "semantic-release pre && npm publish && semantic-release post"
+    "release": "semantic-release pre && npm publish && semantic-release post",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -86,7 +86,7 @@
     "mocha": "2.5.3",
     "npm-run-all": "2.2.0",
     "nyc": "6.6.1",
-    "semantic-release": "4.3.5",
+    "semantic-release": "^4.3.5",
     "webpack": "1.13.1"
   }
 }
