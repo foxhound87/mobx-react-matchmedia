@@ -2,7 +2,7 @@
   "name": "mobx-react-matchmedia",
   "license": "MIT",
   "author": "Claudio Savino <claudio.savino@me.com> (https://twitter.com/foxhound87)",
-  "description": "A React HOC with MobX and MatchMedia",
+  "description": "A React HOC with mediaqueries for responsive layout.",
   "homepage": "https://www.npmjs.com/package/mobx-react-matchmedia",
   "main": "lib/index.js",
   "scripts": {
