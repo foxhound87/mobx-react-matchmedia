@@ -46,7 +46,7 @@ import { MatchMediaProvider } from 'mobx-react-matchmedia';
   <Test breakpoints={breakpoints} />
 </MatchMediaProvider>
 
-// pass the breakpoints as props and check a if true/false
+// pass the breakpoints as props and check if true/false
 
 import { observer } from 'mobx-react';
 
@@ -56,11 +56,11 @@ const Test = ({ breakpoints }) => (
   </div>
 );
 
-AppNav.propTypes = {
+Test.propTypes = {
   breakpoints: React.PropTypes.object,
 };
 
-export default observer(AppNav);
+export default observer(Test);
 
 // now resize the browser window to see the changes
 
