@@ -64,3 +64,9 @@ export default observer(Test);
 // now resize the browser window to see the changes
 
 ```
+
+## Contributing
+
+If you want to contribute to the development, do not hesitate to fork the repo and send pull requests.
+
+And don't forget to star the repo!
