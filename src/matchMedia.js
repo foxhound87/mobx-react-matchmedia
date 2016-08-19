@@ -18,8 +18,8 @@ const setMatchMediaConfig = (req = null) => {
   if (isClient && !req) {
     config = {
       type: 'screen',
-      width: window.innerWidth,
-      height: window.innerHeight,
+      width: window.innerWidth, // eslint-disable-line
+      height: window.innerHeight, // eslint-disable-line
     };
   }
 

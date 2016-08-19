@@ -65,9 +65,3 @@ export default observer(Test);
 // now resize the browser window to see the changes
 
 ```
-
-## TODO:
-
-* Add documentation
-* Add changelog
-* Add some tests

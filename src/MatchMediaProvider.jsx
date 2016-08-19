@@ -1,10 +1,9 @@
-import React, { Component } from 'react';
-import { matchMedia, setMatchMediaConfig } from './matchMedia';
-import { toJS, isObservable, observable, action } from 'mobx';
 import jsonStringifySafe from 'json-stringify-safe';
-import _ from 'lodash';
+import React, { Component } from 'react';
+import { toJS, isObservable, observable, action } from 'mobx';
+import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
-export class MatchMediaProvider extends Component {
+export default class MatchMediaProvider extends Component {
 
   static propTypes = {
     children: React.PropTypes.node,
@@ -22,12 +21,12 @@ export class MatchMediaProvider extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
-    this.matchBreakpoint();
+    window.addEventListener('resize', this.handleResize); // eslint-disable-line
+    this.matchBreakpoint(); // set initials values
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize); // eslint-disable-line
   }
 
   handleResize = (e) => {
@@ -37,7 +36,9 @@ export class MatchMediaProvider extends Component {
 
   matchBreakpoint = () => {
     setMatchMediaConfig();
-    _.mapKeys(this.templates, this.updateBreakpoints);
+    for (const [val, key] of Object.entries(this.templates)) {
+      this.updateBreakpoints(key, val);
+    }
   };
 
   updateBreakpoints = action((val, key) => {
@@ -47,7 +48,9 @@ export class MatchMediaProvider extends Component {
 
   render() {
     return (
-      <div>{this.props && this.props.children}</div>
+      <div>
+        {this.props && this.props.children}
+      </div>
     );
   }
 }
