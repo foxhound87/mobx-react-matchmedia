@@ -69,4 +69,4 @@ export default observer(Test);
 
 If you want to contribute to the development, do not hesitate to fork the repo and send pull requests.
 
-And don't forget to star the repo!
+And don't forget to star the repo! Thanks!
