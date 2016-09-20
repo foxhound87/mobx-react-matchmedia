@@ -1,0 +1,23 @@
+@import 'font-awesome';
+@import 'basscss-colors';
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0 50px;
+}
+
+body {
+  background: #fff;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin-top: 50px;
+}
+
+a {
+  cursor: pointer;
+  color: #F87666;
+}
+
+table {
+  font-size: 22px;
+}

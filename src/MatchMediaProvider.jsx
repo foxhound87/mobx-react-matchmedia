@@ -1,6 +1,5 @@
-import jsonStringifySafe from 'json-stringify-safe';
 import React, { Component } from 'react';
-import { toJS, isObservable, observable, action } from 'mobx';
+import { toJS, isObservable, extendObservable, observable, action, transaction } from 'mobx';
 import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
 export default class MatchMediaProvider extends Component {
@@ -12,12 +11,11 @@ export default class MatchMediaProvider extends Component {
 
   constructor(props) {
     super(props);
-
     this.breakpoints = isObservable(this.props.breakpoints)
       ? this.props.breakpoints
       : observable(this.props.breakpoints);
 
-    this.templates = JSON.parse(jsonStringifySafe(toJS(this.breakpoints, true)));
+    this.templates = toJS(this.breakpoints);
   }
 
   componentDidMount() {
@@ -35,15 +33,16 @@ export default class MatchMediaProvider extends Component {
   };
 
   matchBreakpoint = () => {
-    setMatchMediaConfig();
-    for (const [val, key] of Object.entries(this.templates)) {
-      this.updateBreakpoints(key, val);
-    }
+    transaction(() => {
+      setMatchMediaConfig();
+      Object.keys(this.templates)
+        .forEach(key => this.updateBreakpoints(key, this.templates[key]));
+    });
   };
 
-  updateBreakpoints = action((val, key) => {
+  updateBreakpoints = action('update breakpoints', (key, val) => {
     const match = matchMedia(val).matches;
-    this.breakpoints[key] = match;
+    extendObservable(this.breakpoints, { [key]: match });
   });
 
   render() {
