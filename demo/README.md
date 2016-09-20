@@ -1,4 +1,4 @@
-# MobX React Form Demo
+# MobX React MatchMedia Demo
 
 > This demo project is using the sources files from the `src` directory instead of install it into npm dependecies. Make sure you install all main dependencies before build/run the demo.
 
