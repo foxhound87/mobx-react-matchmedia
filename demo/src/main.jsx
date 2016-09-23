@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import DevTools from 'mobx-react-devtools';
+// import { MatchMediaProvider } from 'mobx-react-matchmedia'; // eslint-disable-line
 import { MatchMediaProvider } from '../../src';
 import Breakpoints from './Breakpoints';
 
