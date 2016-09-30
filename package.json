@@ -53,7 +53,7 @@
   },
   "dependencies": {
     "match-media-mock": "0.1.0",
-    "mobx": "2.5.1",
+    "mobx": "2.5.2",
     "react": "15.3.2"
   },
   "peerDependencies": {
