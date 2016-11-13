@@ -53,17 +53,11 @@ import { MatchMediaProvider } from 'mobx-react-matchmedia';
 
 import { observer } from 'mobx-react';
 
-const Test = ({ breakpoints }) => (
+const Test = observer(({ breakpoints }) => (
   <div>
     {breakpoints.sm ? 'YES' : 'NO'}
   </div>
-);
-
-Test.propTypes = {
-  breakpoints: React.PropTypes.object,
-};
-
-export default observer(Test);
+));
 
 // now resize the browser window to see the changes
 
