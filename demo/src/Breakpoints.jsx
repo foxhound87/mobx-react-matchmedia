@@ -4,11 +4,9 @@ import cx from 'classnames';
 
 const button = cx(['btn', 'rounded', 'btn-outline']);
 
-const Breakpoints = ({ bp }) => (
+export default observer(({ bp }) => (
   <div>
     <div className="mx4">
-      <br />
-      <br />
       <h1>MobX React MatchMedia</h1>
       <h4>Resize your browser window to see the breakpoints changing automatically.</h4>
       <p>
@@ -94,11 +92,4 @@ const Breakpoints = ({ bp }) => (
       </tbody>
     </table>
   </div>
-);
-
-
-Breakpoints.propTypes = {
-  bp: React.PropTypes.object,
-};
-
-export default observer(Breakpoints);
+));

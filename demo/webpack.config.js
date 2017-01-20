@@ -18,14 +18,9 @@ const loaders = [{
   loader: 'file-loader?name=[name].[ext]',
 }];
 
-const postcss = $webpack => [
-  postcssImport({ addDependencyTo: $webpack }),
+const postcss = () => [
+  postcssImport(),
   postcssUrl('inline'),
-  // postcssExtend,
-  // postcssFocus,
-  // autoprefixer,
-  // precss,
-  // cssnano,
 ];
 
 module.exports = {
@@ -46,7 +41,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve('src', 'index.html'),
+      template: path.resolve('.', 'src', 'index.html'),
     }),
   ],
   module: { loaders },

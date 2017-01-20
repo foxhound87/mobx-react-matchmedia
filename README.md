@@ -26,10 +26,9 @@ npm i --save mobx-react-matchmedia
 
 ## Usage
 
+Define mobx observable breakpoints
+
 ```javascript
-
-// define mobx observable breakpoints
-
 import { observable } from 'mobx';
 
 const breakpoints = observable({
@@ -40,17 +39,21 @@ const breakpoints = observable({
   mu: '(min-width: 992px)',
   lg: '(min-width: 1200px)',
 });
+```
 
-// pass the breakpoints to the provider
+Pass the breakpoints to the MatchMediaProvider
 
+```javascript
 import { MatchMediaProvider } from 'mobx-react-matchmedia';
 
 <MatchMediaProvider breakpoints={breakpoints}>
   <Test breakpoints={breakpoints} />
 </MatchMediaProvider>
+```
 
-// pass the breakpoints as props and check if true/false
+Pass the breakpoints as props to components and check if true/false
 
+```javascript
 import { observer } from 'mobx-react';
 
 const Test = observer(({ breakpoints }) => (
@@ -58,10 +61,10 @@ const Test = observer(({ breakpoints }) => (
     {breakpoints.sm ? 'YES' : 'NO'}
   </div>
 ));
-
-// now resize the browser window to see the changes
-
 ```
+
+Now resize the browser window to see the changes!
+
 
 ## Contributing
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { toJS, isObservable, extendObservable, observable, action, transaction } from 'mobx';
+import { toJS, extendObservable, action, runInAction } from 'mobx';
 import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
 export default class MatchMediaProvider extends Component {
@@ -11,16 +11,13 @@ export default class MatchMediaProvider extends Component {
 
   constructor(props) {
     super(props);
-    this.breakpoints = isObservable(this.props.breakpoints)
-      ? this.props.breakpoints
-      : observable(this.props.breakpoints);
-
+    this.breakpoints = this.props.breakpoints;
     this.templates = toJS(this.breakpoints);
   }
 
   componentDidMount() {
     window.addEventListener('resize', this.handleResize); // eslint-disable-line
-    this.matchBreakpoint(); // set initials values
+    this.matchBreakpoints(); // set initials values
   }
 
   componentWillUnmount() {
@@ -29,11 +26,11 @@ export default class MatchMediaProvider extends Component {
 
   handleResize = (e) => {
     e.preventDefault();
-    this.matchBreakpoint();
+    this.matchBreakpoints();
   };
 
-  matchBreakpoint = () => {
-    transaction(() => {
+  matchBreakpoints = () => {
+    runInAction('match breakpoints', () => {
       setMatchMediaConfig();
       Object.keys(this.templates)
         .forEach(key => this.updateBreakpoints(key, this.templates[key]));
