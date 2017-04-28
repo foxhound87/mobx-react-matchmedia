@@ -37,7 +37,7 @@
     "matchmedia"
   ],
   "files": [
-    "es6",
+    "src",
     "lib",
     "umd"
   ],
