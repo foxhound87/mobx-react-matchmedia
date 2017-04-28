@@ -50,7 +50,8 @@
     }
   },
   "dependencies": {
-    "match-media-mock": "0.1.0"
+    "match-media-mock": "0.1.0",
+    "prop-types": "^15.5.8"
   },
   "peerDependencies": {
     "mobx": "^2.5.0 || ^3.0.0",
@@ -73,7 +74,7 @@
     "codecov": "1.0.1",
     "commitizen": "2.9.5",
     "cz-conventional-changelog": "1.2.0",
-    "enzyme": "2.7.0",
+    "enzyme": "^2.8.2",
     "eslint": "3.13.1",
     "eslint-config-airbnb": "14.0.0",
     "eslint-plugin-import": "2.2.0",
@@ -85,9 +86,9 @@
     "mocha": "3.2.0",
     "npm-run-all": "4.0.1",
     "nyc": "10.1.2",
-    "react": "15.4.2",
-    "react-addons-test-utils": "15.4.2",
-    "react-dom": "15.4.2",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-test-renderer": "^15.5.4",
     "semantic-release": "^6.3.2",
     "webpack": "1.14.0"
   }

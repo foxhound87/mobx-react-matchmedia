@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { toJS, extendObservable, action, runInAction } from 'mobx';
 import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
@@ -7,8 +8,8 @@ let breakpoints;
 export default class MatchMediaProvider extends Component {
 
   static propTypes = {
-    children: React.PropTypes.node,
-    breakpoints: React.PropTypes.object,
+    children: PropTypes.node,
+    breakpoints: PropTypes.object,
   };
 
   constructor(props) {
