@@ -6,7 +6,9 @@ cache:
 notifications:
   email: false
 node_js:
-  - '7'
+  - '4'
+before_install:
+  - npm i -g npm@^3.0.0
 before_script:
   - npm prune
 script:
@@ -15,7 +17,7 @@ script:
   - npm run build
 after_success:
   - npm run coverage:report
-  - npm run release
+  - npm run semantic-release
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
