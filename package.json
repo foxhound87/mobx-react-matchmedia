@@ -50,12 +50,12 @@
     }
   },
   "dependencies": {
-    "match-media-mock": "0.1.0",
-    "prop-types": "^15.5.8"
+    "match-media-mock": "0.1.0"
   },
   "peerDependencies": {
     "mobx": "^2.5.0 || ^3.0.0",
-    "react": "^15.0.0"
+    "prop-types": "^15.6.0",
+    "react": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "babel-cli": "6.22.0",
@@ -74,21 +74,23 @@
     "codecov": "1.0.1",
     "commitizen": "2.9.5",
     "cz-conventional-changelog": "1.2.0",
-    "enzyme": "^2.8.2",
+    "enzyme": "^3.1.0",
+    "enzyme-adapter-react-16": "^1.0.1",
     "eslint": "3.13.1",
     "eslint-config-airbnb": "14.0.0",
     "eslint-plugin-import": "2.2.0",
     "eslint-plugin-jsx-a11y": "3.0.2",
     "eslint-plugin-react": "6.9.0",
     "husky": "^0.12.0",
+    "jsdom": "^11.3.0",
     "json-loader": "0.5.4",
-    "mobx": "3.0.2",
+    "mobx": "^3.3.1",
     "mocha": "3.2.0",
     "npm-run-all": "4.0.1",
     "nyc": "10.1.2",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
-    "react-test-renderer": "^15.5.4",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-test-renderer": "^16.0.0",
     "semantic-release": "^6.3.2",
     "webpack": "1.14.0"
   }
