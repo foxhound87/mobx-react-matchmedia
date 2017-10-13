@@ -1,6 +1,7 @@
 {
   "name": "mobx-react-matchmedia",
   "license": "MIT",
+  "version": "0.0.0-semantically-released",
   "author": "Claudio Savino <claudio.savino@me.com> (https://twitter.com/foxhound87)",
   "description": "A React HOC with mediaqueries for responsive layout.",
   "homepage": "https://www.npmjs.com/package/mobx-react-matchmedia",
@@ -91,7 +92,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-test-renderer": "^16.0.0",
-    "semantic-release": "^6.3.2",
+    "semantic-release": "^8.0.3",
     "webpack": "1.14.0"
   }
 }
