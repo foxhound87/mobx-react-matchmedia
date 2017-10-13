@@ -6,17 +6,19 @@ cache:
 notifications:
   email: false
 node_js:
-  - '7'
+  - '4'
 before_install:
   - npm i -g npm@^3.0.0
 before_script:
   - npm prune
+install:
+  - npm install
 script:
   - npm run cover
   - npm run coverage:check
   - npm run build
 after_success:
-  - npm run coverage:report
+  - npm run coverage:reportf
   - npm run semantic-release
 branches:
   except:
