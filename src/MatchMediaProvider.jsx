@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { toJS, extendObservable, action, runInAction } from 'mobx';
+import { toJS, set, action, runInAction } from 'mobx';
 import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
 let breakpoints;
@@ -42,7 +42,7 @@ export default class MatchMediaProvider extends Component {
 
   updateBreakpoints = action('update breakpoints', (key, val) => {
     const match = matchMedia(val).matches;
-    extendObservable(this.props.breakpoints, { [key]: match });
+    set(this.props.breakpoints, { [key]: match });
   });
 
   render() {
