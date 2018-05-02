@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { toJS, set, action, runInAction } from 'mobx';
+import { toJS, extendObservable, set, action, runInAction } from 'mobx';
 import { matchMedia, setMatchMediaConfig } from './matchMedia';
 
 let breakpoints;
 
-export default class MatchMediaProvider extends Component {
+const setObservable = (observable, obj) => set
+  ? set(observable, obj)
+  : extendObservable(observable, obj);
 
+export default class MatchMediaProvider extends Component {
   static propTypes = {
     children: PropTypes.node,
     breakpoints: PropTypes.object,
@@ -42,7 +45,7 @@ export default class MatchMediaProvider extends Component {
 
   updateBreakpoints = action('update breakpoints', (key, val) => {
     const match = matchMedia(val).matches;
-    set(this.props.breakpoints, { [key]: match });
+    setObservable(this.props.breakpoints, { [key]: match });
   });
 
   render() {
