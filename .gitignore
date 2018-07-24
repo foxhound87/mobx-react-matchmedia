@@ -6,7 +6,8 @@
 /node_modules
 /umd
 npm-debug.log
-.nyc_output
+yarn-error.log
 coverage.lcov
 codecov.yml
 yarn.lock
+.nyc_output
